@@ -1,0 +1,91 @@
+.root {
+  background-color: rgb(162, 167, 238);
+  min-height: 400px;
+  padding: 20px 10px;
+}
+.magic-menu {
+  background-color: #585880;
+  padding: 15px;
+  text-align: center;
+}
+
+.magic-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.magic-menu li {
+  display: inline;
+}
+
+.magic-menu a {
+  color: #f3f8f8;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.magic-menu a:hover {
+  background-color: #ffecb3c0;
+  color: #3a3a5a;
+  transform: scale(1.1);
+}
+.title {
+  margin: 10px;
+  text-align: center;
+  font-family: cursive;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  min-height: 30px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+.sub {
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  font-family: cursive;
+}
+.img {
+  width: 100%;
+  transition: transform 0.3 ease;
+}
+.img:hover {
+  transform: scale(1.1);
+}
+.card::after {
+  content: attr(
+    data-tooltip
+  ); /* Используем атрибут для всплывающей подсказки */
+  position: absolute;
+  bottom: 100%; /* Позиционирование над изображением */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный фон */
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap; /* Запрет на перенос текста */
+  opacity: 0; /* Начальная непрозрачность */
+  transition: opacity 0.3s ease; /* Плавный переход для появления */
+}
+
+.card:hover::after {
+  opacity: 1; /* Появление подсказки при наведении */
+}
